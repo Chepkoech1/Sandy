@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "Mike",
+      "email": "Mike.gmail.com",
+      "password": "wewe",
+      "id": 1
+    },
+    {
+      "username": "John",
+      "email": "John.gmail.com",
+      "password": "454554",
+      "id": 2
+    }
+  ]
+}

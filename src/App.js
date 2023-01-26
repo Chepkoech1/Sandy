@@ -6,10 +6,21 @@ import Shelf from "./components/Shelf"
 // import Library from './Library';
 import Search from "./components/Search"
 import Login from './components/Login';
-// import {useState} from 'react'
+import {Route, Routes, useNavigate } from 'react-router-dom';
+import {useState} from 'react'
 
 
 function App() {
+
+  const [logIn, setLogIn] = useState(false);
+  const navigate = useNavigate();
+  function navigateToHome() {
+    if (logIn) {
+      navigate('/home', {replace: true});
+    }
+  }
+
+  navigateToHome();
   // const [showSignUp, setShowSignUp] = useState(false);
   // const handleClick = () => {
   //   setShowSignUp(!showSignUp);
@@ -30,7 +41,10 @@ function App() {
        {/* <NavBar />
        <Home/>
        <Search /> */}
-       <Login/>
+      <Routes>
+        <Route element={<Login setLogIn={setLogIn} />} path='/'></Route>
+        <Route element={<Home/>} path="/home"></Route>
+      </Routes>
       
       
     </>
